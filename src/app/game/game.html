@@ -1,0 +1,12 @@
+Start the game here
+
+<table>
+  <tr ng-repeat="match in matches">
+    <td>
+      <img class="lab2-match match-{{match.left.id}}" src="{{match.left.src}}" ng-click="setSel('left', match.left.id)">
+    </td>
+    <td>
+      <img class="lab2-match match-{{match.right.id}}" src="{{match.right.src}}" ng-click="setSel('right', match.right.id)">
+    </td>
+  </tr>
+</table>
