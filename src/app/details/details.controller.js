@@ -13,6 +13,7 @@
 
     $scope.submit = function() {
       gameService.numMatches = $scope.user.numMatches;
+      gameService.gameType = $scope.user.gameType;
       $state.go('game')
     }
   }

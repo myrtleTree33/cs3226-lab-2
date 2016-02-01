@@ -111,12 +111,13 @@ section.jumbotron {
 
 .bg-detail {
   background: url(../assets/images/giftly.png);
+  padding-top: 10em;
 }
 
 .lab2-match {
   width: 100px;
   height: auto;
-  margin: 0.2em 2em;
+  margin: 0.2em 8em;
   padding: 1em;
 
   &:hover {

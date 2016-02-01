@@ -32,7 +32,6 @@
       }
 
     function checkCurrSel(currSel) {
-      console.log(currSel)
       if (!currSel.left || !currSel.right) {
         return;
       }
@@ -55,9 +54,6 @@
 
       $scope.score = score;
       $scope.scoreMsg = getScoreMsg(score, numMatches);
-      console.log(score)
-      console.log(numMatches)
-
 
       if (gameService.numMatches == score) {
         $scope.isDone = true;
@@ -77,7 +73,7 @@
     var numMatches = gameService.numMatches;
     var subset = _.sampleSize(gameService.db, numMatches);
 
-    $scope.matches = gameService.genGame(subset, 'same');
+    $scope.matches = gameService.genGame(subset, gameService.gameType);
     $scope.setSel = function(direction, id) {
       if (direction === 'left') {
         currSel.left = id;

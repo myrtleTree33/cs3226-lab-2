@@ -7,8 +7,20 @@
           <md-card-title-text>
             <span class="md-headline padding-med" layout layout-align="center center">Please key in the number of matches!</span>
             <md-input-container class="md-block" flex="100">
-              <input class="font-large" ng-model="user.numMatches" placeholder="">
+              <input class="font-large" max="12" min="2" ng-model="user.numMatches" placeholder="" type="number">
             </md-input-container>
+            <p>
+              Match by:
+            </p>
+
+            <md-radio-group ng-model="user.gameType">
+              <md-radio-button class="md-primary" value="same">Normal</md-radio-button>
+              <md-radio-button value="words">
+                Words
+              </md-radio-button>
+              <md-radio-button value="color">Color</md-radio-button>
+            </md-radio-group>
+
           </md-card-title-text>
         </md-card-title>
         <md-card-actions layout-align="center center" layout="row">
