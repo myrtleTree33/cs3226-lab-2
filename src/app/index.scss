@@ -105,18 +105,26 @@ section.jumbotron {
 // injector
 // endinjector
 
+.font-large {
+  font-size: 4em;
+}
+
+.bg-detail {
+  background: url(../assets/images/giftly.png);
+}
 
 .lab2-match {
   width: 100px;
   height: auto;
   margin: 0.2em 2em;
+  padding: 1em;
 
   &:hover {
-    background-color: red;
-    padding: 2em;
+    background-color: rgba(128,128,128, .2);
   }
 }
 
 .lab2-match-correct {
   background-color: green;
+  border-radius: 25px;
 }

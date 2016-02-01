@@ -1,20 +1,21 @@
 <div flex layout-align="center" layout-fill layout="column" ng-cloak ng-controller="DetailsController">
-  <md-content flex layout-align="center center" layout-fill layout="row">
+  <md-content class="bg-detail" flex layout-align="center center" layout-fill layout="row">
     <md-card class="padding-med" flex="70" layout-padding>
-      <form ng-submit="console.log('hi')">
+      <form>
 
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline padding-med" layout layout-align="center center">Please key in the number of matches!</span>
             <md-input-container class="md-block" flex="100">
-              <input ng-model="user.numMatches" placeholder="">
+              <input class="font-large" ng-model="user.numMatches" placeholder="">
             </md-input-container>
           </md-card-title-text>
         </md-card-title>
         <md-card-actions layout-align="center center" layout="row">
-          <md-button ng-click="submit()">Let's begin!</md-button>
+          <md-button class="md-raised md-primary" ng-click="submit()">Let's begin!</md-button>
         </md-card-actions>
       </form>
     </md-card>
+
   </md-content>
 </div>

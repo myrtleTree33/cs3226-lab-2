@@ -80,7 +80,8 @@
         game: "qq",
         db: db,
         genSide: genSide,
-        genGame: genGame
+        genGame: genGame,
+        numMatches: 0
       }
     })
 

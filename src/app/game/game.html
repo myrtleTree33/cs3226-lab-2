@@ -1,12 +1,35 @@
-Start the game here
+<md-content class="bg-detail" flex id="popupContainer" layout-align="center center" layout-fill layout="row">
+  {{score}}
+  <table ng-hide="isDone">
+    <tr ng-repeat="match in matches">
+      <td>
+        <img class="lab2-match match-{{match.left.id}} animated" ng-class="{jello: hovered}" ng-click="setSel('left', match.left.id)" ng-mouseenter="hovered=true" ng-mouseleave="hovered=false" src="{{match.left.src}}">
+      </td>
+      <td>
+        <img class="lab2-match match-{{match.right.id}} animated" ng-class="{jello: hovered2}" ng-click="setSel('right', match.right.id)" ng-mouseenter="hovered2=true" ng-mouseleave="hovered2=false" src="{{match.right.src}}">
+      </td>
+    </tr>
+  </table>
+  <div ng-show="isDone">
 
-<table>
-  <tr ng-repeat="match in matches">
-    <td>
-      <img class="lab2-match match-{{match.left.id}}" src="{{match.left.src}}" ng-click="setSel('left', match.left.id)">
-    </td>
-    <td>
-      <img class="lab2-match match-{{match.right.id}}" src="{{match.right.src}}" ng-click="setSel('right', match.right.id)">
-    </td>
-  </tr>
-</table>
+    <md-card class="padding-med">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{scoreMsg}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>
+          Score: {{score}}
+        </p>
+        <p>
+          Matches wrong: {{numWrong}}
+        </p>
+      </md-card-content>
+      <md-card-actions layout-align="end center" layout="row">
+        <md-button class="md-raised md-primary" ng-click="retry()">Let's try again!</md-button>
+      </md-card-actions>
+    </md-card>
+
+  </div>
+</md-content>
