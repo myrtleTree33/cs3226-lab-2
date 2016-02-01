@@ -8,8 +8,12 @@
 
   /** @ngInject */
   function DetailsController($scope, $state, gameService) {
-    // $scope.user = {}
-    // $scope.user.numMatches = 4;
+    // set defaults
+    // $scope.user.numMatches = 2;
+    $scope.user = {
+      gameType: 'same',
+      numMatches: 2
+    };
 
     $scope.submit = function() {
       gameService.numMatches = $scope.user.numMatches;
