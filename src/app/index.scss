@@ -4,26 +4,21 @@
  */
 // bower:scss
 // endbower
-
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+  src: url("../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot");
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url("../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2") format('woff2'), url("../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff") format('woff'), url("../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf") format('truetype');
 }
-
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px;
+  /* Preferred icon size */
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -43,57 +38,45 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-
 html {
   font-family: 'Roboto Slab', serif;
 }
-
 [layout=row] {
   flex-direction: row;
 }
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
 md-toolbar.md-default-theme {
   background-color: black;
 }
-
 section.jumbotron {
   margin-bottom: 30px;
   padding: 1px 30px;
   background-color: #5aadbb;
   text-align: center;
-
   color: white;
-
   h1 {
     font-size: 3em;
   }
 }
-
 .techs {
   display: flex;
   flex-flow: row wrap;
-
   md-card {
     width: 30%;
-
     img.pull-right {
       float: right;
       width: 100px;
     }
   }
 }
-
 .padding-med {
   padding: 2em;
 }
-
 .zone {
   background-color: red;
 }
@@ -104,32 +87,75 @@ section.jumbotron {
  */
 // injector
 // endinjector
-
+/*********************
+BREAKPOINTS
+SCSS Mixin from https://responsivedesign.is/develop/getting-started-with-sass
+*********************/
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  }
+  @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  }
+  @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  }
+  @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
 .font-large {
   font-size: 4em;
 }
-
 .bg-detail {
-  background: url(../assets/images/giftly.png);
+  background: url("../assets/images/giftly.png");
+
   // padding-top: 10em;
 }
-
 .lab2-match {
-  width: 100px;
+  @include breakpoint(tablet) {
+    width: 5.5em;
+    max-width: 100px;
+  }
+  @include breakpoint(mobileonly) {
+    width: 5em;
+    max-width: 100px;
+  }
+  @include breakpoint(desktop) {
+    width: 7em;
+    max-width: 150px;
+  }
   height: auto;
-  margin: 0.2em 8em;
-  padding: 1em;
 
+  // margin: 2em 2em;
+  // margin: 0.2em 8em;
+  padding: 0.5em;
   &:hover {
     background-color: rgba(128,128,128, .2);
   }
 }
-
 .lab2-match-correct {
   background-color: green;
   border-radius: 25px;
 }
-
 .bg-transparent {
   background: transparent;
+}
+
+#myCanvas {
+  // background-color: red;
 }
