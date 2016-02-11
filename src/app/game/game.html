@@ -9,9 +9,9 @@
       </td>
     </tr>
   </table>
-  <div ng-show="isDone">
-
-    <md-card class="padding-med">
+  <div ng-show="isDone" flex layout="row">
+    <md-content flex layout-align="center center" layout="row" class="bg-transparent">
+    <md-card class="padding-med" flex="100" flex-gt-sm="80" flex-gt-lg="80">
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline">{{scoreMsg}}</span>
@@ -25,10 +25,11 @@
           Matches wrong: {{numWrong}}
         </p>
       </md-card-content>
-      <md-card-actions layout-align="end center" layout="row">
+      <md-card-actions layout-align="end center" layout="column">
         <md-button class="md-raised md-primary" ng-click="retry()">Let's try again!</md-button>
       </md-card-actions>
     </md-card>
+  </md-content>
 
   </div>
 </md-content>

@@ -1,11 +1,11 @@
 <div flex layout-align="center" layout-fill layout="column" ng-cloak ng-controller="DetailsController">
-  <md-content class="bg-detail" flex layout-align="center center" layout-fill layout="row">
-    <md-card class="padding-med" flex="70" layout-padding>
+  <md-content class="bg-detail" flex layout-align="center center"  layout="row">
+    <md-card class="padding-med" flex="100" flex-gt-sm="80" flex-gt-lg="80" layout-padding>
       <form>
 
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline padding-med" layout layout-align="center center">Please key in the number of matches!</span>
+            <span class="md-headline" layout layout-align="center center">Please key in the number of matches!</span>
             <md-input-container class="md-block" flex="100">
               <input class="font-large" max="12" min="2" ng-model="user.numMatches" placeholder="" type="number">
             </md-input-container>
