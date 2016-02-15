@@ -12,7 +12,8 @@
     var canvasObj = {}; // will be initialized with paperJS
     var numMatches = gameService.numMatches;
     var numWrong = 0;
-    console.log(gameService)
+    var soundCorrect = new Audio('assets/sounds/Pickup_Coin6.wav');
+    var soundWrong = new Audio('assets/sounds/Randomize26.wav');
     var currSel = {
         left: null,
         right: null
@@ -40,6 +41,7 @@
 
       // correct
       if (currSel.left === currSel.right) {
+        soundCorrect.play();
         score++;
         var selector = '.match-' + currSel.left;
         $(selector).each(function() {
@@ -80,6 +82,7 @@
         // wrong
       } else {
         numWrong++;
+        soundWrong.play();
         $scope.numWrong = numWrong;
         if (numWrong === 3) {
           $scope.isDone = true;

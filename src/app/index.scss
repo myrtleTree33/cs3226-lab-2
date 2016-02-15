@@ -123,10 +123,9 @@ SCSS Mixin from https://responsivedesign.is/develop/getting-started-with-sass
 }
 .bg-detail {
   background: url("../assets/images/giftly.png");
-
-  // padding-top: 10em;
 }
 .lab2-match {
+  border-radius: 25px;
   @include breakpoint(tablet) {
     width: 5.5em;
     max-width: 100px;
