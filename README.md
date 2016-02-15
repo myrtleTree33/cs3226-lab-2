@@ -1,4 +1,4 @@
-CS3226 Lab 2
+CS3226 Lab 3
 =================================
 
 - Icons: From the Free Round Icons set
@@ -6,18 +6,10 @@ CS3226 Lab 2
 - Package managers: Bower
 - Task-runner: Gulp
 - Scaffolded with Yo.
+- Canvas manipulation and vector-like DOM by Paper JS
+- Sound generated with http://www.bfxr.net/
 
 ## Bonus Challenges
 
-### Bonus A
-
-- Implemented scoring system, game over of max 3
-
-
-### Bonus B
-
-Ability to match pictures with:
-
-- Same image
-- Words 
-- Dominant color
+- Added sound
+- Added animated lines
