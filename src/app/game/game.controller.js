@@ -12,6 +12,8 @@
     var canvasObj = {}; // will be initialized with paperJS
     var numMatches = gameService.numMatches;
     var numWrong = 0;
+    var soundWin = new Audio('assets/sounds/Jingle_Achievement_00.mp3');
+    var soundLose = new Audio('assets/sounds/Jingle_lose.mp3');
     var soundCorrect = new Audio('assets/sounds/Pickup_Coin6.wav');
     var soundWrong = new Audio('assets/sounds/Randomize26.wav');
     var currSel = {
@@ -68,15 +70,15 @@
         var left = getTrueIndex(indexes[0]);
         var right = getTrueIndex(indexes[1]);
         if (Math.abs(left - right) <= 1) {
-        canvasObj.drawStraightLine(
-          iconPoints[indexes[0]],
-          iconPoints[indexes[1]],
-          true);
+          canvasObj.drawStraightLine(
+            iconPoints[indexes[0]],
+            iconPoints[indexes[1]],
+            true);
         } else {
-        canvasObj.drawCurvyLine(
-          iconPoints[indexes[0]],
-          iconPoints[indexes[1]],
-          true);
+          canvasObj.drawCurvyLine(
+            iconPoints[indexes[0]],
+            iconPoints[indexes[1]],
+            true);
         }
 
         // wrong
@@ -85,7 +87,11 @@
         soundWrong.play();
         $scope.numWrong = numWrong;
         if (numWrong === 3) {
+          // game lose
           $scope.isDone = true;
+          setTimeout(function() {
+            soundLose.play();
+          }, 200);
         }
       }
 
@@ -97,6 +103,9 @@
 
       if (gameService.numMatches == score) {
         $scope.isDone = true;
+        setTimeout(function() {
+          soundWin.play();
+        }, 200);
       }
 
       // if (score === gameService.numMatches) {
@@ -141,13 +150,21 @@
           strokeWidth: 10,
           strokeCap: 'round'
         });
-        // path.removeSegments();
+
         path.fullySelected = true;
         path.strokeColor = '#e08285';
         path.add(start);
         path.lineTo(end);
         path.fullySelected = true;
-        // console.log(segment.handleIn);
+
+        path.onMouseEnter = function(event) {
+          path.strokeWidth = 30;
+        };
+
+        path.onMouseLeave = function(event) {
+          path.strokeWidth = 10;
+        };
+
         if (blinks) {
           path.onFrame = function(event) {
             path.strokeColor.hue += 5;
@@ -182,6 +199,15 @@
 
         path.fullySelected = true;
 
+        path.onMouseEnter = function(event) {
+          path.strokeWidth = 30;
+        };
+
+        path.onMouseLeave = function(event) {
+          path.strokeWidth = 10;
+        };
+
+
         if (blinks) {
           path.onFrame = function(event) {
             path.strokeColor.hue += 5;
@@ -209,6 +235,10 @@
 
 
     $scope.retry = function() {
+      $state.go('details')
+    }
+
+    $scope.resetGame = function() {
       $state.go('details')
     }
 

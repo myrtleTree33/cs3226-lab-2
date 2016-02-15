@@ -23,7 +23,7 @@
     // set defaults
     $scope.user = {
       gameType: 'same',
-      numMatches: 2
+      numMatches: 4
     };
 
     $scope.submit = function() {
