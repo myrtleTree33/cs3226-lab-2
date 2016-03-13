@@ -1,0 +1,4 @@
+http://localhost:8000/joel/matching.php?graph_id=1&cmd=submit&solution=[[0,3],[1,4],[2,2]]
+
+
+http://localhost:8000/joel/matching.php?graph_id=3&cmd=generate

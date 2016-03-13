@@ -46,3 +46,6 @@ fi
 
 echo -e "\n"
 
+### Set up website stuff for easy access
+sudo ln -s /vagrant/php /var/www/html/joel
+
